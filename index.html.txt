@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>CoCoffee 精品咖啡 - GA4 实战演练</title>
+    <style>
+        body { font-family: 'Helvetica', sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; }
+        header { background: #333; color: white; padding: 1rem; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        .hero { background-color: #d2b48c; padding: 50px 20px; text-align: center; color: #fff; }
+        .container { max-width: 800px; margin: 20px auto; display: flex; gap: 20px; justify-content: center; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 45%; text-align: center; }
+        .price { color: #d35400; font-size: 1.2em; font-weight: bold; }
+        button { background: #27ae60; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px; margin-top: 10px; }
+        button:hover { background: #2ecc71; }
+        .newsletter { background: #fff; max-width: 600px; margin: 40px auto; padding: 30px; border-radius: 8px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        input[type="email"] { padding: 10px; width: 60%; margin-right: 10px; border: 1px solid #ddd; border-radius: 4px; }
+        .submit-btn { background: #2980b9; }
+        
+        /* 这里的 ID 是给 GTM 瞄准用的靶子，千万别动 */
+    </style>
+    </head>
+<body>
+
+<header>
+    <nav>
+        <a href="#" id="nav-home">首页</a>
+        <a href="#" id="nav-products">全部商品</a>
+        <a href="#" id="nav-about">关于我们</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h1>秋季特调：让灵感发生</h1>
+    <p>限时 8 折优惠</p>
+    <button id="hero-promo-btn">查看活动详情</button>
+</div>
+
+<div class="container">
+    <div class="card">
+        <h3>埃塞俄比亚·耶加雪菲</h3>
+        <p class="price">￥ 88.00</p>
+        <p>花香浓郁，口感明亮。</p>
+        <button id="btn-add-ethiopia" class="add-to-cart">加入购物车</button>
+    </div>
+
+    <div class="card">
+        <h3>哥伦比亚·慧兰</h3>
+        <p class="price">￥ 65.00</p>
+        <p>坚果风味，醇厚回甘。</p>
+        <button id="btn-add-colombia" class="add-to-cart">加入购物车</button>
+    </div>
+</div>
+
+<div class="newsletter">
+    <h3>订阅我们的咖啡周刊</h3>
+    <p>获取最新的冲煮指南和优惠券。</p>
+    <form id="subscribe-form" action="javascript:void(0);">
+        <input type="email" placeholder="输入你的邮箱..." required>
+        <button type="submit" id="btn-subscribe" class="submit-btn">立即订阅</button>
+    </form>
+</div>
+
+<script>
+    // 简单的模拟弹窗，让你点击时有反馈
+    document.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', function() {
+            alert('点击成功！(GTM 应该捕捉到了这个动作)');
+        });
+    });
+</script>
+
+</body>
+</html>
